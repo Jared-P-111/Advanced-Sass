@@ -95,19 +95,19 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .bg-video {
   position: absolute;
@@ -123,7 +123,7 @@ body {
     width: 100%;
     object-fit: cover; }
 
-.btn:link, .btnvisited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -131,7 +131,9 @@ body {
   border-radius: 10rem;
   transition: all 1s;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer; }
 
 .btn:hover {
   transform: translateY(-3px);
@@ -140,7 +142,8 @@ body {
     transform: scaleX(1.5) scaleY(1.6);
     opacity: 0; }
 
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: all .1s; }
@@ -209,21 +212,21 @@ body {
       top: -2rem;
       background-image: url(../../img/nat-1-large.jpg);
       background-color: #28b485;
-      background-blend-mode: soft-light;
+      background-blend-mode: screen;
       height: 25rem; }
     .composition__photo--p2 {
       right: 0;
       top: 2rem;
       background-image: url(../../img/nat-2-large.jpg);
-      background-color: #00804b;
-      background-blend-mode: luminosity;
+      background-color: rgba(255, 119, 48, 0.8);
+      background-blend-mode: screen;
       height: 25rem; }
     .composition__photo--p3 {
       left: 10%;
       top: 10rem;
       background-image: url(../../img/nat-3-large.jpg);
-      background-color: rgba(126, 213, 111, 0.801);
-      background-blend-mode: luminosity;
+      background-color: rgba(86, 67, 250, 0.8);
+      background-blend-mode: screen;
       height: 25rem; }
     .composition__photo:hover {
       background-color: transparent;
@@ -409,14 +412,15 @@ body {
   border-bottom: 5px solid transparent;
   width: 90%;
   display: block; }
-  .form__input:focus {
+  .form__input:focus:valid {
     outline: none;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1rem 2rem rgba(85, 197, 122, 0.5);
     border-bottom: 5px solid rgba(85, 197, 122, 0.801); }
   .form__input:required {
-    box-shadow: none; }
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); }
   .form__input:focus:invalid {
-    border-bottom: 5px solid rgba(255, 119, 48, 0.8); }
+    border-bottom: 5px solid rgba(255, 119, 48, 0.8);
+    box-shadow: 0 1rem 2rem rgba(255, 119, 48, 0.5); }
   .form__input::-webkit-input-placeholder {
     color: #999; }
 
@@ -432,6 +436,45 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 5rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid rgba(85, 197, 122, 0.801);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -.6rem; }
+  .form__radio-button::after {
+    content: "";
+    display: block;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(85, 197, 122, 0.801);
+    opacity: 0;
+    transition: opacity .2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .header {
   height: 95vh;
