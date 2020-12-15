@@ -210,7 +210,7 @@ body {
     .composition__photo--p1 {
       left: 0;
       top: -2rem;
-      background-image: url(././img/nat-1-large.jpg);
+      background-image: url(../../img/nat-1-large.jpg);
       background-color: #28b485;
       background-blend-mode: screen;
       height: 25rem; }
