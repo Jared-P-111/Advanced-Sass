@@ -188,6 +188,8 @@ body {
 .btn-text:hover {
   background-color: rgba(85, 197, 122, 0.801);
   padding: 7px;
+  margin-top: -5px;
+  margin-bottom: -5px;
   border-radius: 200px;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
