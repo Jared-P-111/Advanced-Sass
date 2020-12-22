@@ -523,18 +523,8 @@ body {
   background-color: black;
   z-index: 9999;
   opacity: 0;
-  visibility: hidden; }
-  .popup__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    width: 75%;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    display: table;
-    overflow: hidden; }
+  visibility: hidden;
+  transition: all .3s; }
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
@@ -556,6 +546,38 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+  .popup__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 75%;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    display: table;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all .4s .2s; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .popup__close:visited, .popup__close:link {
+    color: #777;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    text-decoration: none;
+    font-size: 3rem;
+    display: inline-block;
+    transition: all .2s; }
+  .popup__close:hover {
+    color: rgba(85, 197, 122, 0.801); }
 
 .navigation__checkbox {
   display: none; }
